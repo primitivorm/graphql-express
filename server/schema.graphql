@@ -1,0 +1,44 @@
+type Employee {
+    BusinessEntityID: ID
+    NationalIDNumber: String!
+    LoginID: String!
+    OrganizationNode: Int!
+    OrganizationLevel: Int!
+    JobTitle: String!
+    BirthDate: String!
+    MaritalStatus: String!
+    Gender: String!
+    HireDate: String!
+    SalariedFlag: Boolean!
+    VacationHours: Int! 
+    SickLeaveHours: Int!
+    CurrentFlag: Boolean!
+    rowguid: String
+    ModifiedDate: String
+}
+
+type PurchaseOrderHeader {
+    PurchaseOrderID: Int    
+    Status: Int
+    Employee: Employee        
+    OrderDate: String
+    SubTotal: Float!
+    TaxAmt: Float!
+    Freight: Float!
+    TotalDue: Float!
+    ModifiedDate: String!
+}
+
+type Query {
+    employee(BusinessEntityID: ID!): Employee
+}
+
+type Mutation {
+    createEmployee(employee: Employee): Employee
+    updateEmployee(BusinessEntityID: ID!, employee: Employee): Employee
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}

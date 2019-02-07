@@ -7,4 +7,5 @@ const executableSchema = makeExecutableSchema({
   resolvers,
 });
 
+//console.log(schema)
 export default executableSchema;

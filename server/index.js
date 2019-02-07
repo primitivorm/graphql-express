@@ -20,6 +20,8 @@ import express from 'express';
 import { execute, subscribe } from 'graphql';
 import schema from './schema';
 
+const graphqlHTTP = require('express-graphql')
+
 let PORT = 4000;
 
 const WS_GQL_PATH = '/subscriptions';
@@ -37,6 +39,7 @@ app.use(bodyParser.json());
 
 const server = createServer(app);
 
+/*
 new SubscriptionServer({ schema, execute, subscribe }, { server, path: WS_GQL_PATH });
 
 app.use(
@@ -61,16 +64,15 @@ app.use(
     endpointURL: '/graphql'
   })
 );
+*/
 
-/*
 app.use('/graphql', graphqlHTTP({
     schema: schema,
     graphiql: true
-  }));
-*/
+  }))
 
 server.listen(PORT, () => {
-  console.log(`API Server is now running on http://localhost:${PORT}`); // eslint-disable-line no-console
+  console.log(`API Server is now running on http://localhost:${PORT}/graphql`); // eslint-disable-line no-console
   console.log(
     `API Server over web socket with subscriptions is now running on ws://localhost:${PORT}${WS_GQL_PATH}`
   ); // eslint-disable-line no-console

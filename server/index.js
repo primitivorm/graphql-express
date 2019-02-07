@@ -1,10 +1,12 @@
 /*
 #install packages
-npm i babel-cli babel-preset-env
-npm i nodemon --save-dev
-npm i express express-graphql graphql graphql-subscriptions graphql-tools sequelize graphql-server-express
-npm i http subscriptions-transport-ws body-parser sqlite3 casual loadsh 
-npm i babel-preset-es2015 babel-preset-stage-2 babel-plugin-inline-import
+npm i babel-cli babel-preset-env nodemon --save-dev express express-graphql graphql graphql-subscriptions graphql-tools sequelize graphql-server-express http subscriptions-transport-ws body-parser sqlite3 casual loadsh  babel-preset-es2015 babel-preset-stage-2 babel-plugin-inline-import
+
+npm i backpack-core --save
+
+#test server
+yarn add jest jest-cli --dev
+yarn add babel-register
 
 #run project
 npm run start

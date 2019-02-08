@@ -1,7 +1,9 @@
 import { PurchaseOrderHeaderResolve } from './associations'
 import { employee } from './query'
 
-import { createEmployee } from './mutation'
+import { createEmployee, createMessage } from './mutation'
+
+//console.log(createEmployee)
 
 const resolvers = {
     Query: {
@@ -9,7 +11,8 @@ const resolvers = {
     },
     PurchaseOrderHeader: PurchaseOrderHeaderResolve,
     Mutation: {
-        createEmployee
+        createEmployee,
+        createMessage
     }
 }
 
